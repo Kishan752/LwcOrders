@@ -44,6 +44,14 @@
                 Available Credit Limit : {recData.avbCreditLimit}
             </div>
         </div> 
+         
+        <template if:true={renderTable}>
+
+            <c-paginatio-table-comp accountdata={data} total={total} ></c-paginatio-table-comp>
+
+         </template> 
+
+        <c-generic-pagination serverdata={productdata} onsync={handleSyncData} count={recCount} ontotal={handletotal}></c-generic-pagination>
 </template>
 
 

@@ -1,0 +1,20 @@
+<template>
+ 
+    <div class="slds-grid slds-gutters">
+        <div class="slds-col slds-size_1-of-5">
+            {record.Name}
+        </div>
+        <div class="slds-col slds-size_1-of-5">
+           {record.Price}
+        </div>
+        <div class="slds-col slds-size_1-of-5">
+            <lightning-input type="number" class='container' name="input1" variant="label-hidden" value={quant}  onchange={handleChange} ></lightning-input>
+        </div>
+        <div class="slds-col slds-size_1-of-5">
+            <lightning-input type="number" class='container1' variant="label-hidden" value={totalValue}  read-only ></lightning-input>
+        </div>
+
+    </div>
+ 
+
+</template>

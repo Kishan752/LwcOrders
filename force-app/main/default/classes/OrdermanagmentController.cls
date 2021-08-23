@@ -26,7 +26,7 @@ public class OrdermanagmentController {
             }
         }
         wrapper.paymentmethods=payments;
-                
+        wrapper.products=[select id,Name,Unit_Price__c from Our_Product__c];         
         
         return wrapper;
     }
@@ -44,9 +44,9 @@ public class OrdermanagmentController {
     public String avbCreditLimit;
     @AuraEnabled
     public String paymentmethods;
-       
-       
-       
+    @AuraEnabled
+    public List<Our_Product__c> products;
+   
    }
     
 }

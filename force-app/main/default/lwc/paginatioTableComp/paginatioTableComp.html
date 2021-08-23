@@ -1,0 +1,31 @@
+<template>
+    
+    <template if:true={isRender}>
+        <div class="slds-scrollable">
+            <div class="slds-grid slds-gutters">
+                <template for:each={myheaders} for:item="item">
+                    <div key={item} class="slds-col slds-size_1-of-5">
+                        {item}
+                    </div>
+                </template>
+            </div>
+            <template for:each={accountdata} for:item="item">
+              <c-table-row-products-comp key={item} record={item} quant={item.Quantity} quanta={item.Quantity} ></c-table-row-products-comp>
+            </template>
+            <div class="slds-grid slds-gutters">
+                    <div class="slds-col slds-size_1-of-5">
+                        
+                    </div>
+                    <div class="slds-col slds-size_2-of-5">
+                        Total Order Amount:
+                    </div>
+                    <div class="slds-col slds-size_1-of-5">
+                        {total}
+                    </div>
+                
+            </div>
+           
+        </div>
+    </template>
+
+</template>

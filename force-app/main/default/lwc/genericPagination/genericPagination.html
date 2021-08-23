@@ -1,0 +1,23 @@
+<template>
+    <div class="slds-grid slds-gutters">
+        <div class="slds-col slds-size_1-of-5">
+
+        </div>
+        <div class="slds-col slds-size_1-of-12">
+           <lightning-button label="first" icon-name="utility:left" icon-position="left"
+           disabled={checkfirst} onclick={onFirst}></lightning-button>
+        </div>
+        <div class="slds-col slds-size_1-of-12">
+            <lightning-button icon-name="utility:chevronleft" icon-position="left"
+            disabled={checkfirst} onclick={onPrev} ></lightning-button>
+         </div>
+         <div class="slds-col slds-size_1-of-12">
+            <lightning-button icon-name="utility:chevronright" icon-position="right"
+            onclick={onNext} disabled={checkNext}></lightning-button>
+         </div>
+         <div class="slds-col slds-size_1-of-12">
+            <lightning-button label="last" icon-name="utility:right" icon-position="right"
+            onclick={onLast} disabled={checkNext}></lightning-button>
+         </div>
+    </div>
+</template>
