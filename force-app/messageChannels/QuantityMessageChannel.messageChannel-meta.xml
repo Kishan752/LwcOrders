@@ -10,5 +10,9 @@
         <description>This is the record Id that changed</description>
         <fieldName>quantity</fieldName>
     </lightningMessageFields>
+    <lightningMessageFields>
+        <description>This is the record Id that changed</description>
+        <fieldName>totalPrice</fieldName>
+    </lightningMessageFields>
     <masterLabel>QuantityMessageChannel</masterLabel>
 </LightningMessageChannel>
