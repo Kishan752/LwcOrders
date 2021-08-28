@@ -18,7 +18,7 @@ export default class TableRowProductsComp extends LightningElement {
         let value = event.target.value;
         this.quant=value;
         this.totalValue=value * this.record.Price;
-        const payload = { pId: this.record.Id,quantity:value };
+        const payload = { pId: this.record.Id,quantity:value,totalPrice:this.totalValue };
         publish(this.messageContext, BOATMC, payload);  
     
     }

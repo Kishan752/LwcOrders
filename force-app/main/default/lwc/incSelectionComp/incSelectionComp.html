@@ -1,0 +1,15 @@
+<template>
+    <div class="slds-grid slds-gutters slds-m-top_small">
+        <div class="slds-col slds-size_1-of-4">
+            <lightning-input type="checkbox" variant="label-hidden" onchange={handleChange}></lightning-input> 
+        </div>
+        <div class="slds-col slds-size_1-of-4">
+           {record.Name}
+        </div>
+        <div class="slds-col slds-size_1-of-4">
+            {record.rewardAmount}
+        </div>
+        
+
+    </div>
+</template>

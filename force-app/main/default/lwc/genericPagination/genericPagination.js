@@ -14,11 +14,12 @@ export default class GenericPagination extends LightningElement {
     pageSize=5;
     @api count;
     subscription = null;
+    @track orderedProduct=[];
 
     @wire(MessageContext)
     messageContext;
 
-
+     
     connectedCallback(){
         
         this.lstaccount=JSON.parse(JSON.stringify(this.serverdata));
@@ -28,7 +29,10 @@ export default class GenericPagination extends LightningElement {
         }
         this.subscribeMC();
     }
-
+    @api
+    getorderedProduct(){
+         return this.orderedProduct;
+    }
     subscribeMC() {
         // local boatId must receive the recordId from the message
         this.subscription = subscribe(
@@ -50,7 +54,21 @@ export default class GenericPagination extends LightningElement {
           }
         totalPrice+=this.lstaccount[i].Quantity*this.lstaccount[i].Price;
       }
+      let index=-1;
+      for(let i=0;i<this.orderedProduct.length;i++){
+           if(this.orderedProduct.Id == msg.pId){
+            index=i;
+           }
+      }
+
+      if(index == -1){
+        this.orderedProduct.push({Id:msg.pId,Quantity:msg.quantity,totalPrice:msg.totalPrice});
+      }
+      else{
+        this.orderedProduct[index].Quantity=msg.quantity;
+      }
       
+
       let clickEvent = new CustomEvent('total', { detail: totalPrice });
         this.dispatchEvent(clickEvent);
 
